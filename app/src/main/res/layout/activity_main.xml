@@ -83,4 +83,16 @@
         android:text="MODUL 3"
         android:textColor="#F0F8FF" />
 
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/button3"
+        android:layout_below="@+id/button3"
+        android:layout_marginTop="17dp"
+        android:background="#B22222"
+        android:onClick="modul4"
+        android:text="MODUL 4"
+        android:textColor="#F0F8FF" />
+
 </RelativeLayout>
