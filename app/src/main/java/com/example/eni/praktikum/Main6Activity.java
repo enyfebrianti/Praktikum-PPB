@@ -25,15 +25,14 @@
 
         static final String SELECTION = "((" +
                 ContactsContract. Data . DISPLAY_NAME + " NOTNULL) AND (" +
-                ContactsContract . Data . DISPLAY_NAME + " != '' ))" ;
+                ContactsContract . Data . DISPLAY_NAME + " != '' ) )" + ContactsContract.Data._ID + " " ;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-
-
             ProgressBar progressBar = new ProgressBar ( this );
-            progressBar . setLayoutParams ( new ActionBar.LayoutParams( ActionBar.LayoutParams. WRAP_CONTENT ,  ActionBar.LayoutParams. WRAP_CONTENT , Gravity. CENTER ));
+            progressBar . setLayoutParams ( new ActionBar.LayoutParams( ActionBar.LayoutParams. WRAP_CONTENT ,
+                    ActionBar.LayoutParams. WRAP_CONTENT , Gravity. CENTER ));
             progressBar . setIndeterminate ( true );
             getListView (). setEmptyView ( progressBar );
 
@@ -46,21 +45,17 @@
                     android . R . layout . simple_list_item_1 , null ,
                     fromColumns , toViews , 0 );
             setListAdapter ( mAdapter );
-
             getLoaderManager (). initLoader ( 0 , null , this );
         }
-
         public Loader<Cursor> onCreateLoader (int id , Bundle args ) {
 
             return new CursorLoader( this , ContactsContract . Data . CONTENT_URI ,
                     PROJECTION , SELECTION , null , null );
         }
-
         public void onLoadFinished ( Loader < Cursor > loader , Cursor data ) {
 
             mAdapter . swapCursor ( data );
         }
-
         public void onLoaderReset ( Loader < Cursor > loader ) {
             mAdapter . swapCursor ( null );
         }
@@ -68,5 +63,4 @@
         public void onListItemClick (ListView l , View v , int position , long id ) {
 
         }
-
     }

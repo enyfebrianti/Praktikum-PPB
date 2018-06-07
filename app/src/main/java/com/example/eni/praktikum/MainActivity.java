@@ -29,4 +29,21 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(MainActivity.this, Main6Activity.class);
         startActivity(i);
     }
+    public void modul5(View view){
+        Intent i = new Intent(MainActivity.this, Main7Activity.class);
+        startActivity(i);
+    }
+    public void modul6(View view){
+        Intent i = new Intent(MainActivity.this, Main8Activity.class);
+        startActivity(i);
+    }
+    public void modul7(View view){
+        Intent a = new Intent(MainActivity.this, Main9Activity.class);
+        startActivity(a);
+    }
+    public void modul8(View view){
+        Intent b = new Intent(MainActivity.this, Main10Activity.class);
+        startActivity(b);
+    }
 }
+
